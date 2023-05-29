@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
+// import 'bootstrap/dist/css/bootstrap.css';
+import { Screen } from './reuse/Screen';
+import { Bubble } from './Bubble';
+import './App.css'
 
-function App() {
+let bubbleList = [
+    { title:"About"}, { title: "Projects" }, { title: "Skills" },{ title: "History" }]
+
+export const App = (props) => {
+  const [bubbles, setBubbles] = useState(bubbleList);
+
+
+
+  console.log("CHECK HERE: " , props.path);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Screen>
+        {bubbles.map(item => <Bubble key={item.title} id='bubble' item={item.title}></Bubble>)}
+      </Screen>
+    </>
   );
 }
-
-export default App;
