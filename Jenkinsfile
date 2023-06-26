@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'echo "Hello World"'
-                sh 'echo "build docker container"'
+                sh 'docker run --rm -p 1017:3000 7c6b1e7d8c9ab9c14b0f5ee49f45910fe633c023'
                 sh 'echo "Hello World"'
             }
         }
