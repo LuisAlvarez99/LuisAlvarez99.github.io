@@ -142,7 +142,7 @@ export const About = () => {
 
             </Particles>
             <Link to={'/'}>Home</Link>
-            <div style={{backgroundColor: '#0d1b2a', opacity: '0.95',height:'90vmin',width: '95vmax', top:'15px',left: '50px', position: 'relative'}}>
+            <div className='d-flex flex-column align-items-center' style={{backgroundColor: '#0d1b2a', opacity: '0.95',height:'90vmin',width: '95vmax', top:'15px',left: '50px', position: 'relative'}}>
                 <h1 style={{color: 'white'}}>About Me Page</h1>
                 <p style={{color: 'white'}}>This is where I will write my bio</p>
             </div>

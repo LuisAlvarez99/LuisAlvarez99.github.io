@@ -7,8 +7,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'echo "Hello World"'
-                sh 'docker run --rm -p 1017:3000 7c6b1e7d8c9ab9c14b0f5ee49f45910fe633c023'
-                sh 'echo "Hello World"'
+                // docker.image('7c6b1e7d8c9ab9c14b0f5ee49f45910fe633c023').withRun{c -> sh './test-with'}
+                // sh 'docker run --rm -p 1017:3000 7c6b1e7d8c9ab9c14b0f5ee49f45910fe633c023'
             }
         }
     }
