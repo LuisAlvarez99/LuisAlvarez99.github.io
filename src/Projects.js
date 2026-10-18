@@ -64,18 +64,11 @@ export const Projects = () => {
 
                 <div className="timeline-spine">
                     {filteredProjects.map(project => (
-                        <div
+                        <button
                             key={project.id}
-                            role="button"
-                            tabIndex={0}
+                            type="button"
                             className={`project-card rank-${project.rank}`}
                             onClick={() => openModal(project)}
-                            onKeyDown={(e) => {
-                                if (e.key === 'Enter' || e.key === ' ') {
-                                    e.preventDefault();
-                                    openModal(project);
-                                }
-                            }}
                         >
                             <div className={`rank-badge ${project.rank}`}>
                                 {project.rank}
@@ -86,7 +79,7 @@ export const Projects = () => {
                                 <span className="card-date">{project.date}</span>
                             </div>
                             <p className="card-summary">{project.summary}</p>
-                        </div>
+                        </button>
                     ))}
                 </div>
 

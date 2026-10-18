@@ -70,6 +70,10 @@
     gap: 1rem;
     position: relative;
     border: 2px solid transparent;
+    text-align: left;
+    color: white;
+    font-family: inherit;
+    outline: none;
 }
 
 .project-card:hover {
