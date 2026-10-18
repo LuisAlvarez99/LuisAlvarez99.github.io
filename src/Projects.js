@@ -66,8 +66,16 @@ export const Projects = () => {
                     {filteredProjects.map(project => (
                         <div
                             key={project.id}
+                            role="button"
+                            tabIndex={0}
                             className={`project-card rank-${project.rank}`}
                             onClick={() => openModal(project)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    e.preventDefault();
+                                    openModal(project);
+                                }
+                            }}
                         >
                             <div className={`rank-badge ${project.rank}`}>
                                 {project.rank}
@@ -83,9 +91,9 @@ export const Projects = () => {
                 </div>
 
                 {selectedProject && (
-                    <div className="modal-backdrop" onClick={handleBackdropClick}>
-                        <div className="modal-content">
-                            <button className="close-button" onClick={closeModal}>&times;</button>
+                    <div className="modal-backdrop" onClick={handleBackdropClick} role="presentation">
+                        <div className="modal-content" role="dialog" aria-modal="true">
+                            <button className="close-button" onClick={closeModal} aria-label="Close modal">&times;</button>
                             <div className="modal-body">
                                 <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                                     <h2>{selectedProject.title}</h2>

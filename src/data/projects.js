@@ -66,4 +66,5 @@ const projects = [
     }
 ];
 
-export default projects.sort((a, b) => new Date(b.date) - new Date(a.date));
+const sortedProjects = [...projects].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+export default sortedProjects;
